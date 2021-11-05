@@ -60,11 +60,9 @@ App = {
     },
     setValue: async () => {
         var value = $('#setValue').val();
+        
+        let privateKeys = await $.getJSON("./wallet-keys.json");
 
-        const privateKeys = [
-            'ea60bc8375b2c51cf675386b754ed4c9ad44f52bb58296354c9baecfb423eeda',
-            '62b514d5cdba66944eadf7e159e600e8a68f81621390f8b9981f88289a1f07f9'
-        ]
         let receipt;
 
         for (let i = 0; i < privateKeys.length; i++) {
@@ -73,6 +71,7 @@ App = {
             receipt = await send(account1, transaction1);
             console.log(receipt)
         }
+
     }
 
 }

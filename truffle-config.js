@@ -18,7 +18,7 @@
  *
  */
 
- const privateKey = "ea60bc8375b2c51cf675386b754ed4c9ad44f52bb58296354c9baecfb423eeda";
+ const privateKey = require('./src/wallet-keys.json');
  const HDWalletProvider = require('@truffle/hdwallet-provider');
  // const infuraKey = "fj4jll3k.....";
  //
@@ -49,7 +49,7 @@
        network_id: "*",       // Any network (default: none)
      },
      testnet: {
-       provider: new HDWalletProvider(privateKey, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+       provider: new HDWalletProvider(privateKey[0], `https://data-seed-prebsc-1-s1.binance.org:8545`),
        network_id: 97,
        confirmations: 10,
        timeoutBlocks: 200,
